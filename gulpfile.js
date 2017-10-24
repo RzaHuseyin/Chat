@@ -29,7 +29,6 @@ gulp.task('browser-sync', function() {
 		server: {
 			baseDir: 'dist'
 		},
-		proxy: "localhost:5050",
 		notify: false,
 	});
 });
