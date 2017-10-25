@@ -24,8 +24,10 @@ body
 .chat-body
     margin-top: 3em
 .menu
-    background:#37474F
-    background: repeating-linear-gradient(to right, #263238 , #455A64, #263238   )
+    background:#4e5566
+    box-shadow: -3px 0 20px 0 #B0BEC5 
+    
+    // background: repeating-linear-gradient(to right, #263238 , #4557E7 51%, #263238   )
     // background: radial-gradient( #37474F, #455A64)
     ul 
         width: 100%
@@ -41,10 +43,12 @@ body
         
 
 .main
-    background: #ECEFF1
+    background: #f2f6fc
+    box-shadow: -20px 4px 36px -16px #282a2d 
+    
     // background: repeating-linear-gradient(to right, #CFD8DC 5% , #ECEFF1 85%, #CFD8DC )
     overflow-y: auto
-    height: 700px
+    height: 701px
     &::-webkit-scrollbar 
         width: 0.5em
         height: 50px
@@ -58,7 +62,7 @@ body
     
     .form-group
         input,button
-            background-color: #B0BEC5
+            background-color: #e7ebf1
             border: 0
             &:focus
                 outline: 0
@@ -80,8 +84,7 @@ body
             font-family: 'Arimo'   
             
             &:hover
-                background-color: #B0BEC5
-                background: repeating-linear-gradient(to right, #B0BEC5 , #CFD8DC, #B0BEC5   )
+                background-color: #e7ebf1
             h4
                 font-size: 14px
                 font-weight: 600
@@ -95,7 +98,7 @@ body
                 font-size: 10px
 
             .newmsj
-                background: #29B6F6
+                background: #7bbdfa
                 color: #E1F5FE
                 width: 1.5em
                 height: 1.5em
@@ -105,8 +108,8 @@ body
                 visibility: visible
 
 .main_body
-    background: #ECEFF1
-    box-shadow: -3px 0 20px 0 #B0BEC5 
+    background: #f7f9fa
+    box-shadow: -1px 0 20px 0 #B0BEC5 
     .chat_body
         .chat_body_header
         span
@@ -115,8 +118,21 @@ body
             color: #B0BEC5
         .chat_body_conver
             height: 556px
+            overflow-x: hidden
+            overflow-y: auto
+
+            &::-webkit-scrollbar 
+                width: 0.5em
+                height: 50px
+
+            &::-webkit-scrollbar-track 
+                -webkit-box-shadow: inset 0 0 6px #e7ebf1;
+
+            &::-webkit-scrollbar-thumb 
+                background-color: darkgrey 
+                outline: 1px solid slategrey
             p  
-                background-color: #CFD8DC
+                background-color: #e7ebf1
                 width: max-content
                 padding: 3px 8px 
                 color: #90A4AE
@@ -124,19 +140,22 @@ body
                 line-height: 28px
                 border-bottom-left-radius: 0
             div>.myPar
-                background-color: #4FC3F7
+                background-color: #7bbdfa
                 color: white
                 border-radius: 3px
                 border-bottom-right-radius: 0
-                                    
+                max-width: 360px
+            img  
+                cursor: pointer                   
             span
                 line-height: 21px
         .chat_body_footer
-            background: #CFD8DC
+            background: #e7ebf1
             .form-group
                 margin: 0
+                width: 70%
                 input
-                    background-color: #CFD8DC
+                    background-color: #e7ebf1
                     border: 0
                     padding: 22px
                     font-family: Roboto
@@ -147,14 +166,21 @@ body
                 font-size: 20px
                 margin-right: 25px
                 cursor: pointer
+            .fa-angle-up
+                border: 1px solid black
+                border-radius: 50%
+                padding: 0px 3px
     .chat_news
         background-color: white
-        box-shadow: -3px 0 20px 0 #B0BEC5 
+        box-shadow: -1px 0 20px 0 #B0BEC5 
         .pro_img
             width: 100px
             height: 100px
             img
                 width: 100%
+        .rounded
+            width: 70px
+            height: 58px
         span ,i  
             color: #B0BEC5
         p  
@@ -174,8 +200,13 @@ body
         font-family: Arimo
         font-size: 16px
         font-weight: 600    
-        color: #616161  
-        span
+        color: #616161
+        .userName
+            font-family: Arimo
+            font-size: 16px
+            font-weight: 600    
+            color: #616161
+        .fa-circle
             font-size: 10px
             position: relative
             font-family: Roboto
