@@ -14,8 +14,14 @@ $(".js_enter").click(function () {
     addMsj()
 })
 function addMsj(params) {
+    var col_name;
+    if($(".chat_body").hasClass("col-md-12")){
+        col_name="col-md-9"
+    }else{
+        col_name="col-md-12"
+    }
     $(".chat_body_conver").append('\
-        <div class="col-md-12 flex-wrap one_message">\
+        <div class="'+ col_name+' flex-wrap one_message ml-auto">\
             <div class="row py-2">\
                 <div class="col-md-10 align-self-center">\
                     <div class="row flex-column align-items-end">\
@@ -23,10 +29,15 @@ function addMsj(params) {
                         <span>Yesterday 10:24 AM</span>\
                     </div>\
                 </div>\
-                <div class="col-md-2"><img src="image/01.jpg" class="rounded-circle" alt=""></div>\
+                <div class="col-md-2">\
+                    <div class="row justify-content-end pr-3">\
+                        <img src="image/01.jpg" class="rounded-circle" alt="">\
+                    </div>\
+                </div>\
             </div>\
         </div>\
     ')
+    $(".js_msj_text").val("")
 }
 
 
@@ -39,13 +50,28 @@ window.onkeyup = function(e) {
    }
 }
 
-// document.addEventListener("keydown", keyDownTextField, false);
 
-// function keyDownTextField(e) {
-// var keyCode = e.keyCode;
-//   if(keyCode==13) {
-//   alert("You hit the enter key.");
-//   } else {
-//   alert("Oh no you didn't.");
-//   }
-// }
+$(".userimage").click(function(){
+        showInfo()
+    }
+)
+$(".js_info_user .fa-angle-down").click(function(){
+        hideInfo()
+    }
+)
+function showInfo() {
+    $(".chat_body").removeClass("col-md-12").addClass("col-md-8")
+    $(".chat_body .one_message").removeClass("col-md-9").addClass("col-md-12")
+    setTimeout(function () {
+        $(".js_info_user").fadeIn()
+    } ,350)
+   
+}
+function hideInfo() {
+    $(".js_info_user").fadeOut()
+    setTimeout(function () {
+        $(".chat_body").removeClass("col-md-8").addClass("col-md-12")
+        $(".chat_body .one_message").removeClass("col-md-12").addClass("col-md-9")
+    } ,350)
+   
+}
