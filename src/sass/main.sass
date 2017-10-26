@@ -5,8 +5,13 @@
     transition: all  .3s ease  
 body
     font-family: 'Roboto'   
-    background-color:   #90A4AE
+    background-color: #90A4AE
+    background-color: #90A4AE
+    background: repeating-radial-gradien(#7a8392  , #90A4AE, #7a8392)
     
+    .container
+        >.row
+            box-shadow: 0px 20px 50px -12px #282a2d 
 @font-face
     font-family: "Roboto"
     src: url("../css/font/Roboto-Regular.ttf")
@@ -27,6 +32,7 @@ body
     background: #37474F
     box-shadow: -3px 0 20px 0 #B0BEC5 
     
+    
     // background: repeating-linear-gradient(to right, #263238 , #4557E7 51%, #263238   )
     // background: radial-gradient( #37474F, #455A64)
     ul 
@@ -40,11 +46,12 @@ body
             color: white
     .active
         color: white 
-        
+    .logImage
+        cursor: pointer
 
 .main
     background: #f2f6fc
-    box-shadow: -20px 4px 36px -16px #282a2d 
+    box-shadow: -20px 4px 50px -16px #282a2d 
     
     // background: repeating-linear-gradient(to right, #CFD8DC 5% , #ECEFF1 85%, #CFD8DC )
     overflow-y: auto
@@ -109,7 +116,7 @@ body
 
 .main_body
     background: #f7f9fa
-    box-shadow: -1px 0 20px 0 #B0BEC5 
+    box-shadow: -5px 0 40px 0 #B0BEC5 
     .chat_body
         .chat_body_header
         span
@@ -237,9 +244,49 @@ body
         cursor: pointer
         &:hover
             color: #607D8B
+.myInfo
+    display: none
+    background: white
+    background: #f7f9fa
+    box-shadow: -20px 4px 50px -16px #282a2d 
 
+    h3
+        font-family: Roboto
+        font-size: 18px
+        line-height: 24px
+        color: #90A4AE
 
+    h1
+        font-family: Arimo
+        font-size: 20px
+        font-weight: 600    
+        color: #616161
+    p  
+        font-family: Roboto
+        font-size: 13px
+        line-height: 24px
+        color: #B0BEC5
+    .owl-dots
+        position: absolute
+        right: -14%
+        top: 50%
+        transform: rotate(90deg)
+    .userProfileInfo
+        ul  
+            li  
+                font-family: Roboto
+                font-size: 13px
+                line-height: 24px
+                color: #B0BEC5
+            .pl-1
+                color: #37474F
 
+.myInfoDocs
+    display: none
+    background: white
+    background: #f7f9fa
+    box-shadow: 0
+    
 
 
 
