@@ -1,23 +1,23 @@
+@import 'mixin'  
 
-  
 *
     font-family: 'Roboto'
     transition: all  .3s ease  
 body
     font-family: 'Roboto'   
-    background-color: #90A4AE
-    background-color: #90A4AE
-    background: repeating-radial-gradien(#7a8392  , #90A4AE, #7a8392)
-    
+    background-color: $dark_grey
+    background-color: $dark_grey
+    background: repeating-radial-gradien(#7a8392  , $dark_grey, #7a8392)
     .container
         >.row
-            box-shadow: 0px 20px 50px -12px #282a2d 
+            box-shadow: 0px 20px 50px -12px $blue_color 
+
 @font-face
     font-family: "Roboto"
     src: url("../css/font/Roboto-Regular.ttf")
 
 @font-face
-    font-family: "Roboto-Black",sans-serif
+    font-family: "Roboto-Black",sans-serif 
     src: url("../css/font/Roboto-Black.ttf")
 
 @font-face
@@ -30,7 +30,7 @@ body
     margin-top: 3em
 .menu
     background: #37474F
-    box-shadow: -3px 0 20px 0 #B0BEC5 
+    box-shadow: -3px 0 20px 0 $blue_grey200 
     
     
     // background: repeating-linear-gradient(to right, #263238 , #4557E7 51%, #263238   )
@@ -40,7 +40,7 @@ body
 
     .fa
         font-size: 20px
-        color: #90A4AE 
+        color: $dark_grey 
         cursor: pointer
         &:hover
             color: white
@@ -51,29 +51,29 @@ body
 
 .main
     background: #f2f6fc
-    box-shadow: -20px 4px 50px -16px #282a2d 
+    box-shadow: -20px 4px 50px -16px $blue_color 
     
     // background: repeating-linear-gradient(to right, #CFD8DC 5% , #ECEFF1 85%, #CFD8DC )
     overflow-y: auto
     height: 701px
-    &::-webkit-scrollbar 
+    &::-webkit-scrollbar
         width: 0.5em
         height: 50px
 
-    &::-webkit-scrollbar-track 
+    &::-webkit-scrollbar-track
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
 
-    &::-webkit-scrollbar-thumb 
-        background-color: darkgrey
+    &::-webkit-scrollbar-thumb
+        background-color: $dark_grey
         outline: 1px solid slategrey
     
     .form-group
         input,button
-            background-color: #e7ebf1
+            background-color: $grey100
             border: 0
             &:focus
                 outline: 0
-        input  
+        input
             width: 80%
             text-align: center
             font-family: 'Arimo'
@@ -81,7 +81,7 @@ body
             
         button
             padding: 5px 11px
-            color: #90A4AE
+            color: $dark_grey
             cursor: pointer
     ul
         width: 100%
@@ -91,22 +91,16 @@ body
             font-family: 'Arimo'   
             
             &:hover
-                background-color: #e7ebf1
+                background-color: $grey100
             h4
-                font-size: 14px
-                font-weight: 600
-                color: #616161
+                @include text_style(14px, roboto, $white50, 600, 1.2)
             p  
-                font-size: 11px
-                line-height: 20px
-                color: #757575
-            span  
-                font-family: Roboto
-                font-size: 10px
-
+                @include text_style(12px, roboto, #757575, 400, 20px)
+            span
+                @include text_style(10px, roboto, #757575, 400, 20px)
             .newmsj
+                @include text_style(10px, roboto, #E1F5FE, 400, 20px)
                 background: #7bbdfa
-                color: #E1F5FE
                 width: 1.5em
                 height: 1.5em
                 border-radius: 50%
@@ -116,13 +110,14 @@ body
 
 .main_body
     background: #f7f9fa
-    box-shadow: -5px 0 40px 0 #B0BEC5 
+    box-shadow: -5px 0 40px 0 $blue_grey200 
     .chat_body
         .chat_body_header
         span
-            font-family: Roboto
-            font-size: 10px
-            color: #B0BEC5
+            @include text_style(10px, roboto, $blue_grey200, 400, 20px)
+        i
+            &:before
+                font-family: fontAwesome
         .chat_body_conver
             height: 556px
             overflow-x: hidden
@@ -133,19 +128,17 @@ body
                 height: 50px
 
             &::-webkit-scrollbar-track 
-                -webkit-box-shadow: inset 0 0 6px #e7ebf1
+                -webkit-box-shadow: inset 0 0 6px $grey100
 
             &::-webkit-scrollbar-thumb 
-                background-color: darkgrey 
+                background-color: $dark_grey 
                 outline: 1px solid slategrey
             p  
-                background-color: #e7ebf1
+                @include text_style(13px, roboto, $dark_grey, 400, 28px)
+                background-color: $grey100
                 width: max-content
                 padding: 3px 8px 
-                font-family: Roboto
-                color: #90A4AE
                 border-radius: 5px
-                line-height: 28px
                 border-bottom-left-radius: 0
             div>.myPar
                 background-color: #4FC3F7
@@ -158,19 +151,19 @@ body
             span
                 line-height: 21px
         .chat_body_footer
-            background: #e7ebf1
+            background: $grey100
             .form-group
                 margin: 0
                 width: 70%
                 input
-                    background-color: #e7ebf1
+                    background-color: $grey100
                     border: 0
                     padding: 22px
                     font-family: Roboto
                     &:focus
                         outline: o
             i
-                color: #90a4ae
+                color: $dark_grey
                 font-size: 20px
                 margin-right: 25px
                 cursor: pointer
@@ -180,7 +173,7 @@ body
                 padding: 0px 3px
     .js_info_user
         background-color: white
-        box-shadow: -1px 0 20px 0 #B0BEC5 
+        box-shadow: -1px 0 20px 0 $blue_grey200 
         display: none
         .pro_img
             width: 100px
@@ -197,7 +190,7 @@ body
             width: 70px
             height: 58px
         span ,i  
-            color: #B0BEC5
+            color: $blue_grey200
         p  
             font-size: 13px
         .video
@@ -206,21 +199,11 @@ body
                 width: 100%
     
     h5
-        font-family: Roboto
-        font-size: 15px
-        line-height: 24px
-        color: #90A4AE
-
+        @include text_style(15px, roboto, $dark_grey, 400, 24px) 
     h3
-        font-family: Arimo
-        font-size: 16px
-        font-weight: 600    
-        color: #616161
+        @include text_style(16px, Arimo, $white50, 600, 24px) 
         .userName
-            font-family: Arimo
-            font-size: 16px
-            font-weight: 600    
-            color: #616161
+            @include text_style(16px, Arimo, $white50, 600, 24px) 
         .fa-circle
             font-size: 10px
             position: relative
@@ -234,13 +217,9 @@ body
                 top: -1px
                 left: -15px
     p  
-        font-family: Roboto
-        font-size: 13px
-        line-height: 24px
-        color: #B0BEC5
+        @include text_style(13px, Roboto, $blue_grey200, 400, 15px) 
     .fa.pr-4
-        font-size: 22px
-        color: #78909C
+        @include text_style(22px, Roboto, #78909C, 400, 15px) 
         cursor: pointer
         &:hover
             color: #607D8B
@@ -248,24 +227,15 @@ body
     display: none
     background: white
     background: #f7f9fa
-    box-shadow: -20px 4px 50px -16px #282a2d 
+    box-shadow: -20px 4px 50px -16px $blue_color 
 
     h3
-        font-family: Roboto
-        font-size: 18px
-        line-height: 24px
-        color: #90A4AE
+        @include text_style(18px, Roboto, $dark_grey, 600, 24px) 
 
     h1
-        font-family: Arimo
-        font-size: 20px
-        font-weight: 600    
-        color: #616161
+        @include text_style(20px, Arimo, $white50, 600, 24px) 
     p  
-        font-family: Roboto
-        font-size: 13px
-        line-height: 24px
-        color: #B0BEC5
+        @include text_style(13px, Arimo, $blue_grey200, 600, 24px) 
     .owl-dots
         position: absolute
         right: -14%
@@ -273,20 +243,57 @@ body
         transform: rotate(90deg)
     .userProfileInfo
         ul  
-            li  
-                font-family: Roboto
-                font-size: 13px
-                line-height: 24px
-                color: #B0BEC5
+            li 
+                @include text_style(13px, Roboto, $blue_grey200, 400, 24px) 
             .pl-1
                 color: #37474F
-
+    .myLocation
+        .social_link
+            li 
+                border: 0
+                padding: 0
+                a
+                    background-size: contain 
+                    line-height: 51px
+                    padding: 16px 12px
+                    text-indent: -999px 
 .myInfoDocs
     display: none
     background: white
     background: #f7f9fa
     box-shadow: 0
-    
+
+
+$color: blue
+
+// =simple-mixin
+//     @if ".video_h3 == red"
+//         color: red
+//     @else 
+//         // @debug "$boolean is #{$boolean}"
+//         color: yellow
+
+.my_video
+    .video_h3
+        @include text_style(13px, Roboto, $dark_grey, 600, 24px) 
+        position: relative 
+        z-index: 5
+        // +simple-mixin
+        &:before
+            content: " "
+            position: absolute
+            width: 100px
+            height: 100px
+            top: 5px
+            left: 5px
+            background: blue
+            border-radius: 50%
+            z-index: -1
+    .video_h311
+        color: black
+        // +simple-mixin
+        
+
 
 
 

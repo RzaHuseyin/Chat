@@ -1,0 +1,21 @@
+$dark_grey: #90A4AE
+$blue_color:  #282a2d  
+$blue_grey200:  #B0BEC5  
+$grey100: #e7ebf1
+$white50: #616161 
+  
+// mixin for text style
+@mixin text_style($font_size: 13px,$font_family: Roboto,$text_color: blue, $font_weight: 400, $line_height: 1.2)
+    font-size: $font_size
+    color: $text_color
+    font-family: $font_family
+    font-weight: $font_weight
+    line-height: $line_height
+
+$icons: (facebook, google, twitter, youtube)
+@each $item in $icons
+    .#{$item}
+        background: url('../image/#{$item}.png') no-repeat
+
+// .menu
+//     width: percentage(50px / 1170px) !important

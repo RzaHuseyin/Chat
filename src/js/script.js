@@ -96,12 +96,17 @@ $('.owl-carousel').owlCarousel({
     loop: true,
     nav: false,
     margin: 10,
-    item: 3,
+    item: 1,
     margin: 10,
-    responsiveClass: true,
+    // animateOut: 'slideOutDown',
+    // animateIn: 'flipInX',
     autoplay: true,
     autoplayTimeout: 100,
     autoplayHoverPause: true,
+    smartSpeed:1000,
+    animateOut: 'slideOutUp',
+    animateIn: 'slideInUp',
+    responsiveClass: true,
     responsive: {
         0: {
             items: 1,
@@ -197,6 +202,9 @@ AmCharts.makeChart("chartdiv2",
     ]
 }
 );
+
+// <<<<<<<<<<<<<< google maps  >>>>>>>>>>> 
+
 
 // test 
 // function hesab(sum, aysayi){
